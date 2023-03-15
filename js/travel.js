@@ -18,39 +18,44 @@
         } else if (12<=month || month<=2) {
             season = 'winter'
         }
-        // console.log(season)
+        console.log(season)
         // console.log(local)
+
+        // 닫기버튼
+        $('button#close').on('click', function(){
+            $('#contBox').addClass('close')
+        })
 
         // 버튼별 지역명을 클래스로 붙이기
         $('button#seoul').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('busan gangwon daejeon gwangju jeju').addClass('seoul')
+            $('#contBox').removeClass('close busan gangwon daejeon gwangju jeju').addClass('seoul')
         })
         $('button#busan').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('seoul gangwon daejeon gwangju jeju').addClass('busan')
+            $('#contBox').removeClass('close seoul gangwon daejeon gwangju jeju').addClass('busan')
         })
         $('button#gangwon').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('seoul busan daejeon gwangju jeju').addClass('gangwon')
+            $('#contBox').removeClass('close seoul busan daejeon gwangju jeju').addClass('gangwon')
         })
         $('button#daejeon').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('seoul busan gangwon gwangju jeju').addClass('daejeon')
+            $('#contBox').removeClass('close seoul busan gangwon gwangju jeju').addClass('daejeon')
         })
         $('button#gwangju').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('seoul busan gangwon daejeon jeju').addClass('gwangju')
+            $('#contBox').removeClass('close seoul busan gangwon daejeon jeju').addClass('gwangju')
         })
         $('button#jeju').on('click', function(){
-            $('button').removeClass()
+            $('#map button').removeClass()
             $(this).addClass('on')
-            $('#contBox').removeClass('seoul busan gangwon daejeon gwangju').addClass('jeju')
+            $('#contBox').removeClass('close seoul busan gangwon daejeon gwangju').addClass('jeju')
         })
 
         // 월별 계절 변경
@@ -63,17 +68,13 @@
         } else if (season == 'winter') {
             $('#contBox').addClass('winter')
         }
-
-        // 넘어온 지역을 근교 별로 전환
-/*         if (areaKoreanName = 'seoul.kr') {
-            local = 'seoul'
-        }
-        if (areaKoreanName = 'Incheon,KR'){
-            local = 'seoul'
-        } */
         
     }
-        
+    $(window).on('resize', function(){
+        if (innerWidth < 1024) {
+            location.reload()
+        }
+    })
 
         
 })(jQuery)

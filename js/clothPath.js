@@ -67,6 +67,8 @@ import dataArr from "./EnglishName.js";
         } else if (weathersuchi == 'Clouds' || weathersuchi == 'Rain') {
             $('.oneModal').prepend(`<iframe src="/codyPage2.html" style="width:100%; height:100%"></iframe>`)
 
+        }else{
+            $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
         }
         return false;
 

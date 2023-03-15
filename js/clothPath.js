@@ -36,7 +36,7 @@ import dataArr from "./EnglishName.js";
 
                 // 현재온도
                 var $Temp = Math.floor(resp.main.temp);
-                console.log($Temp)
+                // console.log($Temp)
 
                 // 한글 영어로 변환 기능
                 let ddArrctBc = dataArr.filter((value) => {

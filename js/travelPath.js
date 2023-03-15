@@ -24,7 +24,7 @@ import dataArr from "./EnglishName.js";
 
                     koreaAreaNameEng = ddArrctBc[0].eng.split(',')
                     koreaAreaNameValue = koreaAreaNameEng[0].toLowerCase()
-                    console.log(koreaAreaNameValue)
+                    // console.log(koreaAreaNameValue)
 
 
                 }
@@ -49,9 +49,9 @@ import dataArr from "./EnglishName.js";
         } else if (12 <= month || month <= 2) {
             season = 'winter'
         }
-        console.log(season)
+        // console.log(season)
         // console.log(local)
-        console.log(koreaAreaNameValue)
+        // console.log(koreaAreaNameValue)
 
         /* $('button#seoul').addClass('on') */
         // 버튼별 지역명을 클래스로 붙이기

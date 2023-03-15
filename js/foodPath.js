@@ -43,7 +43,7 @@ import dataArr from "./EnglishName.js";
         runframe.addEventListener('load', function(){
             this.contentDocument.querySelector('#keyword').setAttribute('value', koreaAreaName) 
         })    
-        console.log(koreaAreaName)
+        // console.log(koreaAreaName)
         return false;
 
     })

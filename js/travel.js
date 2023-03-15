@@ -18,7 +18,7 @@
         } else if (12<=month || month<=2) {
             season = 'winter'
         }
-        console.log(season)
+        // console.log(season)
         // console.log(local)
 
         // 버튼별 지역명을 클래스로 붙이기
@@ -65,12 +65,12 @@
         }
 
         // 넘어온 지역을 근교 별로 전환
-        if (areaKoreanName = 'seoul.kr') {
+/*         if (areaKoreanName = 'seoul.kr') {
             local = 'seoul'
         }
         if (areaKoreanName = 'Incheon,KR'){
             local = 'seoul'
-        }
+        } */
         
     }
         

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,7 +109,7 @@
                 type: "GET",
                 async: "false",
                 success: function (resp) {
-                    console.log(resp);
+                    // console.log(resp);
                     // console.log(resp.weather[0].id)
                     // console.log(resp.weather[0].icon)
 
@@ -219,6 +220,7 @@
             let ddArrct = dataArr.filter((value) => {
                 return value.kor === inputDataVal
             })
+            // console.log(ddArrct)
             $('.bg-video__content').remove();
             weatherApi(ddArrct[0].eng);
             return false

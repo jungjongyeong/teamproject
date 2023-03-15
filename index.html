@@ -188,24 +188,24 @@
                     let weather_id = resp.weather[0].id;
                     let weather_icon = resp.weather[0].icon;
                     if (weather_Main == 'Clouds' || weather_id === 500) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                     } else if (weather_Main == 'Clear') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     } else if (601 <= weather_id && weather_id <= 699) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                     } else if (weather_icon == '50d') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                         $('#data1').css("border", "1px solid #000")
                     } else {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     }

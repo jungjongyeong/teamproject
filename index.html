@@ -21,82 +21,82 @@
     <link rel="icon" href="/img/weather_icon.jpg">
     <link rel="stylesheet" href="./css/rwdindex.css">
 </head>
-
 <body>
-    <span id="clock"></span>
-    <div class="back_form">
-        <div class="CITY_description">
-            <div class="current_temp"></div>
-            <div class="city"></div>
-        </div>
-        <article class="articleModal">
-            <form class="search_form">
-                <input type="text" Id="data1" value="서울">
-                <button type="submit" value="send"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-            <div class="Modal_page">
-                <ul class="swiper-container myswiper">
-                    <div class="swiper-wrapper">
-                        <li class="swiper-slide slider1">
-                            <div class="zoom sect1 dress_modal">
-                                <div class="slide_span">
-                                    <span>Weather Cloth</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="swiper-slide slider2">
-                            <div class="zoom sect2 food_modal">
-                                <div class="slide_span">
-                                    <span>Area Food</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="swiper-slide slider3">
-                            <div class="zoom sect3 travel_modal">
-                                <div class="slide_span">
-                                    <span>Season Travel</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="swiper-slide slider4">
-                            <div class="zoom sect4 dust_modal">
-                                <div class="slide_span">
-                                    <span>Dust Information </span>
-                                </div>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="swiper-pagination"></div>
+
+    <!-- <span id="clock"></span> -->
+        <div class="back_form">
+            <div class="CITY_description">
+                <div class="current_temp"></div>
+                <div class="city"></div>
             </div>
+            <article class="articleModal">
+                <form class="search_form">
+                    <input type="text" Id="data1" value="서울">
+                    <button type="submit" value="send"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="Modal_page">
+                    <ul class="swiper-container myswiper">
+                        <div class="swiper-wrapper">
+                            <li class="swiper-slide slider1">
+                                <div class="zoom sect1 dress_modal">
+                                    <div class="slide_span">
+                                        <span>Weather Cloth</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide slider2">
+                                <div class="zoom sect2 food_modal">
+                                    <div class="slide_span">
+                                        <span>Area Food</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide slider3">
+                                <div class="zoom sect3 travel_modal">
+                                    <div class="slide_span">
+                                        <span>Season Travel</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide slider4">
+                                <div class="zoom sect4 dust_modal">
+                                    <div class="slide_span">
+                                        <span>Dust Information </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                </div>
 
-            <div class="weather">
-                <h1>Weather Details</h1>
-                <div class="weather_text">
-                    <div>
-                        <span>Max/Min Temp</span>
-                        <span class="Temp_right">
-                            <span class="temp_min"></span>
-                            <span class="temp_max"></span>
-                        </span>
-                    </div>
-                    <div>
-                        <span>Humidity</span><span class="humidity"></span>
-                    </div>
+                <div class="weather">
+                    <h1>Weather Details</h1>
+                    <div class="weather_text">
+                        <div>
+                            <span>Max/Min Temp</span>
+                            <span class="Temp_right">
+                                <span class="temp_min"></span>
+                                <span class="temp_max"></span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>Humidity</span><span class="humidity"></span>
+                        </div>
 
-                    <div>
-                        <span>Windy</span><span class="wind"></span>
-                    </div>
-                    <div>
-                        <span>Dust</span><span class="dust"></span>
-                    </div>
-                    <div>
-                        <span>Cloud</span>
-                        <div class="cloud"></div>
+                        <div>
+                            <span>Windy</span><span class="wind"></span>
+                        </div>
+                        <div>
+                            <span>Dust</span><span class="dust"></span>
+                        </div>
+                        <div>
+                            <span>Cloud</span>
+                            <div class="cloud"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
-    </div>
+            </article>
+        </div>
 
     <script type="module">
         import dataArr from "./js/EnglishName.js";

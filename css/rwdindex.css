@@ -22,3 +22,7 @@
     left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); width:30%; } 
     .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{ display: none;}
  }
+ @media screen and (max-height:700px){
+   .slide_span { display: none;}
+   .swiper-container { height:100px;}
+   }

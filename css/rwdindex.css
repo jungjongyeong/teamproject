@@ -20,5 +20,5 @@
  .Modal_page { top:19%; } 
  .modal .imgbox button { position: absolute; bottom: 0; /* top: 0; */
     left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); width:30%; } 
-   
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{ display: none;}
  }

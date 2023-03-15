@@ -5,18 +5,37 @@
 	box-sizing: border-box;
 }
 
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+}
+.loader i {
+	animation: fa-spin 2s infinite linear;
+	font-size: 3rem;
+}
+.wrapper {
+	display: none;
+}
+.fa-spinner {
+  font-size: 3em;
+}
+
 body {
 	
 	text-align: center;
 	background-color: #fff;
 }
 
-h1 {
+.wrapper h1 {
 	color: #000;
 	text-align: center;
 	margin-top: 5%;
-}
-
+	font-size: 35px;
+	font-weight: bold;
+ }
 .main {
 	display: flex;
 	position: relative;

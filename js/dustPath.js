@@ -28,13 +28,15 @@ import dataArr from "./EnglishName.js";
         })
 
         $('.Modal_page ul li .sect4').on('click', function () {
-            $('body').append(`<div class="modal"></div>`)
-            $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
-            $('.imgbox').prepend(`<a></a>`)
-            $('.imgbox a').after(`<button type="button">닫기</button>`)
-            $('.oneModal').prepend(`
-                        <iframe src="/mise.html" style="width:100%; height:100%"></iframe>`)
-            return false;
+            $('.modal1').css('z-index', '-100')
+            $('.modal2').css('z-index', '-100')
+            $('.modal3').css('z-index', '-100')
+            $('.modal4').css('z-index', '100')
+            $('.oneModal').css('z-index', '-100')
+            $('.twoModal').css('z-index', '-100')
+            $('.threeModal').css('z-index', '-100')
+            $('.fourModal').css('z-index', '100')
+                return false;
     
         })
     

@@ -27,22 +27,28 @@ import dataArr from "./EnglishName.js";
 
     // 지역에 따른 음식 추천 ( 지역이름을 보내서 데이터를 모달창에 띄울거임 )
     $('.Modal_page ul li .sect2').on('click', function () {
-        $('body').append(`<div class="modal"></div>`)
+        $('.modal1').css('z-index', '-100')
+        $('.modal2').css('z-index', '100')
+        $('.modal3').css('z-index', '-100')
+        $('.modal4').css('z-index', '-100')
+        $('.oneModal').css('z-index', '-100')
+        $('.twoModal').css('z-index', '100')
+        $('.threeModal').css('display', 'none')
+        $('.fourModal').css('z-index', '-100')
+
+/*         $('body').append(`<div class="modal"></div>`)
         $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
         $('.imgbox').prepend(`<a></a>`)
         $('.imgbox a').after(`<button type="button">닫기</button>`)
         $('.oneModal').prepend(`
                     <iframe name="ifrm" id="iframe" src="/foodPage.html" style="width:100%; height:100%; opacity:1;"></iframe>`)
-        // $('#iframe').animate({
+ */        // $('#iframe').animate({
         //     opacity:1
         // },10, function(){
         //     const runframe = document.getElementById('iframe');
         //     runframe.contentWindow.document.querySelector('#keyword').value = koreaAreaName
         // })
-        const runframe = document.getElementById('iframe')
-        runframe.addEventListener('load', function(){
-            this.contentDocument.querySelector('#keyword').setAttribute('value', koreaAreaName) 
-        })    
+ 
         // console.log(koreaAreaName)
         return false;
 

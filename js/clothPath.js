@@ -56,12 +56,17 @@ import dataArr from "./EnglishName.js";
 
 
     $('.Modal_page ul li .sect1').on('click', function () {
-        $('body').append(`<div class="modal"></div>`)
-        $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
-        $('.imgbox').prepend(`<a></a>`)
-        $('.imgbox a').after(`<button type="button">닫기</button>`)
+        $('.modal1').css('z-index', '100')
+        $('.modal2').css('z-index', '-100')
+        $('.modal3').css('z-index', '-100')
+        $('.modal4').css('z-index', '-100')
+        $('.oneModal').css('z-index', '100')
+        $('.twoModal').css('z-index', '-100')
+        $('.threeModal').css('z-index', '-100')
+        $('.fourModal').css('z-index', '-100')
 
-        if (weathersuchi == 'Clear') {
+
+/*         if (weathersuchi == 'Clear') {
             $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
             console.log(11)
         } else if (weathersuchi == 'Clouds' || weathersuchi == 'Rain') {
@@ -69,10 +74,13 @@ import dataArr from "./EnglishName.js";
 
         }else{
             $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
-        }
+        } */
         return false;
 
     })
+/*     $('.button').on('click', function(){
+        $('.modal').css('z-index', '-100')
+    }) */
 
     // ajax에서 보낸 값(한글)을 영어로 바꿔주는 폼
     $('form').on('submit', function () {

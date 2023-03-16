@@ -27,18 +27,6 @@ import dataArr from "./EnglishName.js";
             }
         })
 
-        $('.Modal_page ul li .sect4').on('click', function () {
-            $('body').append(`<div class="modal"></div>`)
-            $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
-            $('.imgbox').prepend(`<a></a>`)
-            $('.imgbox a').after(`<button type="button">닫기</button>`)
-            $('.oneModal').prepend(`
-                        <iframe src="/mise.html" style="width:100%; height:100%"></iframe>`)
-            return false;
-    
-        })
-    
-
         // 대기오염 api
         const dustData = (latData, lonData) => {
             $.ajax({

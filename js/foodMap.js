@@ -23,7 +23,7 @@ function searchPlaces(keymenu) {
     let keystring = $('#keyword').val().split(" ")
     let keyplace = keystring[0] 
     let keyword = keyplace + " " + keymenu
-    // console.log(keyword)
+    console.log(keyword)
 
     $('#menu_wrap input').attr('value', keyword)
 

@@ -24,7 +24,7 @@ import dataArr from "./EnglishName.js";
 
                     koreaAreaNameEng = ddArrctBc[0].eng.split(',')
                     koreaAreaNameValue = koreaAreaNameEng[0].toLowerCase()
-                    // console.log(koreaAreaNameValue)
+                    console.log(koreaAreaNameValue)
 
 
                 }
@@ -49,9 +49,9 @@ import dataArr from "./EnglishName.js";
         } else if (12 <= month || month <= 2) {
             season = 'winter'
         }
-        // console.log(season)
+        console.log(season)
         // console.log(local)
-        // console.log(koreaAreaNameValue)
+        console.log(koreaAreaNameValue)
 
         /* $('button#seoul').addClass('on') */
         // 버튼별 지역명을 클래스로 붙이기
@@ -98,17 +98,13 @@ import dataArr from "./EnglishName.js";
         }
 
         $('.Modal_page ul li .sect3').on('click', function () {
-            $('.modal1').css('z-index', '-100')
-            $('.modal2').css('z-index', '-100')
-            $('.modal3').css('z-index', '100')
-            $('.modal4').css('z-index', '-100')
-            $('.oneModal').css('z-index', '-100')
-            $('.twoModal').css('z-index', '-100')
-            $('.threeModal').css('z-index', '100')
-            $('.fourModal').css('z-index', '-100')
-            $('.threeModal').prepend(`
-            <iframe name="ifrm2" id="iframe2" src="/travel.html" style="width:100%; height:100%;"></iframe>`)
-            const runframe = document.getElementById('iframe2');
+            $('body').append(`<div class="modal"></div>`)
+            $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
+            $('.imgbox').prepend(`<a></a>`)
+            $('.imgbox a').after(`<button type="button">닫기</button>`)
+            $('.oneModal').prepend(`
+            <iframe name="ifrm" id="iframe" src="/travel.html" style="width:100%; height:100%;"></iframe>`)
+            const runframe = document.getElementById('iframe');
 
             if (koreaAreaNameValue == 'seoul' || koreaAreaNameValue == 'incheon' || koreaAreaNameValue == 'yongin'
                 || koreaAreaNameValue == 'yeoju' || koreaAreaNameValue == 'yangju' || koreaAreaNameValue == 'uiwang'

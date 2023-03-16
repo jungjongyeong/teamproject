@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +22,7 @@
 </head>
 
 <body>
-    <div class="loader">
-        <i class="fas fa-spinner fa-spin"></i>
-    </div>
-    <!-- <span id="clock"></span> -->
+    <span id="clock"></span>
     <div class="back_form">
         <div class="CITY_description">
             <div class="current_temp"></div>
@@ -112,7 +108,7 @@
                 type: "GET",
                 async: "false",
                 success: function (resp) {
-                    // console.log(resp);
+                    console.log(resp);
                     // console.log(resp.weather[0].id)
                     // console.log(resp.weather[0].icon)
 
@@ -184,39 +180,6 @@
                     maxGion += `</span>`
                     $('.temp_max').append(maxGion);
 
-                    $('body').append(`<div class="modal1"></div>`)
-                    $('body').append(`<div class="modal2"></div>`)
-                    $('body').append(`<div class="modal3"></div>`)
-                    $('body').append(`<div class="modal4"></div>`)
-                    $('.modal1').prepend(`<div class="oneModal"></div>`)
-                    $('.modal2').prepend(`<div class="twoModal"></div>`)
-                    $('.modal3').prepend(`<div class="threeModal"></div>`)
-                    $('.modal4').prepend(`<div class="fourModal"></div>`)
-                    $('.oneModal').prepend(`<a></a>`)
-                    $('.twoModal').prepend(`<a></a>`)
-                    $('.threeModal').prepend(`<a></a>`)
-                    $('.fourModal').prepend(`<a></a>`)
-                    $('.oneModal a').after(`<button type="button" class="button">닫기</button>`)
-                    $('.twoModal a').after(`<button type="button" class="button">닫기</button>`)
-                    $('.threeModal a').after(`<button type="button" class="button">닫기</button>`)
-                    $('.fourModal a').after(`<button type="button" class="button">닫기</button>`)
-                    $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
-                    $('.twoModal').prepend(`<iframe name="ifrm" id="iframe" src="/foodPage.html" style="width:100%; height:100%"></iframe>`)
-                    
-                    $('.fourModal').prepend(`<iframe src="/mise.html" style="width:100%; height:100%"></iframe>`)
-
-                    const runframe = document.getElementById('iframe')
-                    runframe.addEventListener('load', function () {
-                        this.contentDocument.querySelector('#keyword').setAttribute('value', koreaAreaName)
-                    })
-                    $('.modal1').css('z-index', '-100')
-                    $('.modal2').css('z-index', '-100')
-                    $('.modal3').css('z-index', '-100')
-                    $('.modal4').css('z-index', '-100')
-                    $('.oneModal').css('z-index', '-100')
-                    $('.twoModal').css('z-index', '-100')
-                    $('.threeModal').css('z-index', '-100')
-                    $('.fourModal').css('z-index', '-100')
 
                     // 날씨에 따른 배경화면 전환
 
@@ -224,25 +187,24 @@
                     let weather_id = resp.weather[0].id;
                     let weather_icon = resp.weather[0].icon;
                     if (weather_Main == 'Clouds' || weather_id === 500) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
-
                     } else if (weather_Main == 'Clear') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     } else if (601 <= weather_id && weather_id <= 699) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                     } else if (weather_icon == '50d') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                         $('#data1').css("border", "1px solid #000")
                     } else {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     }
@@ -257,7 +219,6 @@
             let ddArrct = dataArr.filter((value) => {
                 return value.kor === inputDataVal
             })
-            // console.log(ddArrct)
             $('.bg-video__content').remove();
             weatherApi(ddArrct[0].eng);
             return false

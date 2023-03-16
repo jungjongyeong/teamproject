@@ -3,9 +3,10 @@ ul { margin:0; }
 li { list-style-type:none; } 
 a { color:inherit; vertical-align:baseline; text-decoration:none; } 
 button { float: right; width: 20%; height: 40px; color:#fff; border:none; border-radius: 5px; background: none; cursor: pointer; } 
+
 /* 배경 및 searchForm */
 .back_form { position:relative; width:100%; height:100vh; background: no-repeat center; background-size: cover;; } 
-.bg-video__content { position: absolute; top: 0; left: 0;  width: 100%; height: 100%; object-fit: cover;z-index:-1 }
+.bg-video__content { position: absolute; top: 0; left: 0;  width: 100%; height: 100%; object-fit: cover;z-index:-1 } 
 .CITY_description { position: absolute; top: 15px; left: 15px; color: #fff; } 
 .CITY_description > div { display:inline-block; } 
 .CITY_description .current_temp { font-size:100px; } 
@@ -17,24 +18,6 @@ button { float: right; width: 20%; height: 40px; color:#fff; border:none; border
 .search_form { position:absolute; top:2%; left:50%; transform: translateX(-50%); border-bottom:2px solid #fff; } 
 .search_form i { transform:translateY(1px) } 
 #data1 { position: relative; width: 60%; height: auto; height: 40px; padding: 0 .5em; color:#fff; border:none; border-radius: 5px; background:none } 
-.loader {
-	position: fixed;
-	z-index: 9999;
-	width:100%;
-	height:100%;
-	background-color: #fff;
-}
-.loader i {
-	animation: fa-spin 2s infinite linear;
-	font-size: 3rem;
-	position: absolute;
-	top:50%;
-	left:50%;
-    transform: translateX(-50%);
-}
-.fa-spinner {
-  font-size: 3em;
-}
 
 
 /* Swiper */
@@ -73,22 +56,9 @@ button { float: right; width: 20%; height: 40px; color:#fff; border:none; border
 .weather .cloud { float:right; } 
 
 /* 모달창 css */
-.modal1 { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 99; backdrop-filter: blur(10px);} 
-.modal2 { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 99; backdrop-filter: blur(10px);} 
-.modal3 { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 99; backdrop-filter: blur(10px);} 
-.modal4 { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 99; backdrop-filter: blur(10px);} 
-.modal1 .oneModal { position:absolute; top:50%; left:50%; width:80%; height:80%; transform: translate(-50%, -50%); } 
-.modal2 .twoModal { position:absolute; top:50%; left:50%; width:80%; height:80%; transform: translate(-50%, -50%); } 
-.modal3 .threeModal { position:absolute; top:50%; left:50%; width:80%; height:80%; transform: translate(-50%, -50%); } 
-.modal4 .fourModal { position:absolute; top:50%; left:50%; width:80%; height:80%; transform: translate(-50%, -50%); } 
-
-.modal1 .oneModal button { position: absolute; bottom: 0; /* top: 0; */
- left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); } 
-.modal2 .twoModal button { position: absolute; bottom: 0; /* top: 0; */
- left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); } 
-.modal3 .threeModal button { position: absolute; bottom: 0; /* top: 0; */
- left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); } 
-.modal4 .fourModal button { position: absolute; bottom: 0; /* top: 0; */
+.modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 99; backdrop-filter: blur(10px);} 
+.modal .imgbox { position:absolute; top:50%; left:50%; width:80%; height:80%; z-index: 100; transform: translate(-50%, -50%); } 
+.modal .imgbox button { position: absolute; bottom: 0; /* top: 0; */
  left: 50%; padding: 5px 10px; color: #fff; background: #000; transform: translateX(-50%); } 
 
 

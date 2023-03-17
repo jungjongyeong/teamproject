@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
+
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -23,7 +24,10 @@
 </head>
 
 <body>
-    <span id="clock"></span>
+    <div class="loader">
+        <i class="fas fa-spinner fa-spin"></i>
+    </div>
+    <!-- <span id="clock"></span> -->
     <div class="back_form">
         <div class="CITY_description">
             <div class="current_temp"></div>
@@ -100,6 +104,9 @@
 
     <script type="module">
         import dataArr from "./js/EnglishName.js";
+        let koreaAreaName = '';
+
+
 
         const weatherApi = (area) => {
             $.ajax({
@@ -109,7 +116,7 @@
                 type: "GET",
                 async: "false",
                 success: function (resp) {
-                    console.log(resp);
+                    // console.log(resp);
                     // console.log(resp.weather[0].id)
                     // console.log(resp.weather[0].icon)
 
@@ -119,7 +126,7 @@
                     })
 
                     // 입력한 한글 지역이름
-                    let koreaAreaName = ddArrctBc[0].kor;
+                    koreaAreaName = ddArrctBc[0].kor;
 
                     // 날씨 데이터 담은 변수들
                     var $weather_description = resp.weather[0].description;
@@ -131,7 +138,7 @@
                     var $temp_min = '' + Math.floor(resp.main.temp_min) + 'º';
                     var $temp_max = '&nbsp/&nbsp;' + Math.floor(resp.main.temp_max) + 'º';
 
-                    $('.bg_video_mp4 .weather_MainVAR .icon, .description, .current, .humid, .windy, .dosi, .goorem, .minGion, .maxGion').remove()
+                    $('.modal1 .modal4 .bg_video_mp4 .weather_MainVAR .icon, .description, .current, .humid, .windy, .dosi, .goorem, .minGion, .maxGion').remove()
 
                     //날씨 한단어로 설명 ex)맑음
                     let description = `<div class="description">`
@@ -182,36 +189,55 @@
                     $('.temp_max').append(maxGion);
 
 
+
+
                     // 날씨에 따른 배경화면 전환
 
                     let weather_Main = resp.weather[0].main
                     let weather_id = resp.weather[0].id;
                     let weather_icon = resp.weather[0].icon;
                     if (weather_Main == 'Clouds' || weather_id === 500) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
+
                     } else if (weather_Main == 'Clear') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     } else if (601 <= weather_id && weather_id <= 699) {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                     } else if (weather_icon == '50d') {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img18.mp4");
                         $('#data1').css("border", "1px solid #000")
                     } else {
-                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop></video>`)
+                        $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)
                         $(".bg_video_mp4").attr("src", "./img/main_img19.mp4");
                     }
                 }
             })
         }
+        $('body').append(`<div class="modal1"></div>`)
+        $('body').append(`<div class="modal4"></div>`)
+        $('.modal1').prepend(`<div class="oneModal"></div>`)
+        $('.modal4').prepend(`<div class="fourModal"></div>`)
+        $('.oneModal').prepend(`<a></a>`)
+        $('.fourModal').prepend(`<a></a>`)
+        $('.oneModal a').after(`<button type="button" class="button">닫기</button>`)
+        $('.fourModal a').after(`<button type="button" class="button">닫기</button>`)
+        $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
+        $('.fourModal').prepend(`<iframe src="/mise.html" style="width:100%; height:100%"></iframe>`)
+
+        $('.modal1').css('opacity', '0')
+        $('.modal4').css('opacity', '0')
+        $('.oneModal').css('opacity', '0')
+        $('.fourModal').css('opacity', '0')
+
 
         // ajax에서 보낸 값(한글)을 영어로 바꿔주는 폼
         $('form').on('submit', function () {
@@ -220,6 +246,7 @@
             let ddArrct = dataArr.filter((value) => {
                 return value.kor === inputDataVal
             })
+            // console.log(ddArrct)
             $('.bg-video__content').remove();
             weatherApi(ddArrct[0].eng);
             return false

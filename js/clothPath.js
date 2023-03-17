@@ -56,18 +56,23 @@ import dataArr from "./EnglishName.js";
 
 
     $('.Modal_page ul li .sect1').on('click', function () {
-        $('body').append(`<div class="modal"></div>`)
-        $('.modal').prepend(`<div class="imgbox oneModal"></div>`)
-        $('.imgbox').prepend(`<a></a>`)
-        $('.imgbox a').after(`<button type="button">닫기</button>`)
-
-        if (weathersuchi == 'Clear') {
+        $('.oneModal').css('opacity', '1')
+        $('.oneModal').css('z-index', '2000')
+        $('.twoModal').css('opacity', '0')
+        $('.threeModal').css('opacity', '0')
+        $('.fourModal').css('opacity', '0')
+        $('.modal1').css('opacity', '1')
+        $('.modal1').css('z-index', '2000')
+        $('.modal2').css('opacity', '0')
+        $('.modal3').css('opacity', '0')
+        $('.modal4').css('opacity', '0')
+        /* if (weathersuchi == 'Clear') {
             $('.oneModal').prepend(`<iframe src="/codyPage.html" style="width:100%; height:100%"></iframe>`)
             console.log(11)
         } else if (weathersuchi == 'Clouds' || weathersuchi == 'Rain') {
             $('.oneModal').prepend(`<iframe src="/codyPage2.html" style="width:100%; height:100%"></iframe>`)
 
-        }
+        } */
         return false;
 
     })

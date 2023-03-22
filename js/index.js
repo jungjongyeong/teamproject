@@ -1,7 +1,8 @@
 (function ($) {
+
     setTimeout(function () {
-        $(".loader").fadeOut(500);
-    }, 2000);
+        $(".introClone").fadeOut(1000);
+    }, 8000);
 
     // 모달창의 닫기 버튼 클릭하면 모달창 닫게 하기
     $('body').on('click', '.button', function () {
@@ -19,5 +20,6 @@
     $('body').on('click', '.back_form', function (e) {
         $('.modal').remove()
     })
+
 
 })(jQuery);

@@ -24,10 +24,8 @@
 </head>
 
 <body>
-    <div class="loader">
-        <i class="fas fa-spinner fa-spin"></i>
-    </div>
     <!-- <span id="clock"></span> -->
+    <iframe src="./클론코딩/intro.html" class="introClone"></iframe>
     <div class="back_form">
         <div class="CITY_description">
             <div class="current_temp"></div>
@@ -99,6 +97,7 @@
                     </div>
                 </div>
             </div>
+            
         </article>
     </div>
 
@@ -196,6 +195,9 @@
                     let weather_Main = resp.weather[0].main
                     let weather_id = resp.weather[0].id;
                     let weather_icon = resp.weather[0].icon;
+
+
+
                     if (weather_Main == 'Clouds' || weather_id === 500) {
                         $(".back_form").append(`<video class="bg-video__content" autoplay muted loop poster="./img/투명한이미지.png"></video>`)
                         $(".bg-video__content").append(`<source class="bg_video_mp4"></source>`)

@@ -3,9 +3,11 @@ ul { margin:0; }
 li { list-style-type:none; } 
 a { color:inherit; vertical-align:baseline; text-decoration:none; } 
 button { float: right; width: 20%; height: 40px; color:#fff; border:none; border-radius: 5px; background: none; cursor: pointer; } 
+/* introClone */
+.introClone { position: fixed; width:100%; height:100%; z-index: 9999; } 
 /* 배경 및 searchForm */
 .back_form { position:relative; width:100%; height:100vh; background: no-repeat center; z-index: 1000; background-size: cover;; } 
-.bg-video__content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:-1; object-fit: cover } 
+.bg-video__content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:-1; object-fit: cover; } 
 .CITY_description { position: absolute; top: 15px; left: 15px; color: #fff; } 
 .CITY_description > div { display:inline-block; } 
 .CITY_description .current_temp { font-size:100px; } 
@@ -17,9 +19,7 @@ button { float: right; width: 20%; height: 40px; color:#fff; border:none; border
 .search_form { position:absolute; top:2%; left:50%; transform: translateX(-50%); border-bottom:2px solid #fff; } 
 .search_form i { transform:translateY(1px) } 
 #data1 { position: relative; width: 60%; height: auto; height: 40px; padding: 0 .5em; color:#fff; border:none; border-radius: 5px; background:none } 
-.loader {position: fixed;width:100%;height:100%;z-index: 9999;background-color: #fff; } 
-.loader i {position: absolute;top:50%;left:50%;font-size: 3rem;animation: fa-spin 2s infinite linear; transform: translateX(-50%); } 
-.fa-spinner { font-size: 3em; } 
+
 
 
 /* Swiper */

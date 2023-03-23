@@ -27,17 +27,17 @@ import dataArr from "./EnglishName.js";
             }
         })
 
-        $('.Modal_page ul li .sect4').on('click', function () {
+        $('.box.sect4').on('click', function () {
             $('.modal1').css('opacity', '0')
             $('.modal2').css('opacity', '0')
             $('.modal3').css('opacity', '0')
-            $('.modal4').css('opacity', '1')
-            $('.modal4').css('z-index', '2000')
+            $('.modal4.modal').css('opacity', '1')
+            $('.modal4.modal').css('z-index', '2000')
             $('.oneModal').css('opacity', '0')
             $('.twoModal').css('opacity', '0')
             $('.threeModal').css('opacity', '0')
-            $('.fourModal').css('opacity', '1')
-            $('.fourModal').css('z-index', '2000')
+            $('.fourModal.modalSanse').css('opacity', '1')
+            $('.fourModal.modalSanse').css('z-index', '2000')
                 return false;
     
         })
